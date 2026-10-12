@@ -1,0 +1,7 @@
+DATE,PATIENT,ENCOUNTER,CATEGORY,CODE,DESCRIPTION,VALUE,UNITS,TYPE
+2021-01-10T09:00:00Z,a1f0c9e2-0001-4b6e-9a51-000000000001,e0000005,laboratory,4548-4,Hemoglobin A1c/Hemoglobin.total in Blood,7.4,%,numeric
+2022-01-12T09:00:00Z,a1f0c9e2-0001-4b6e-9a51-000000000001,e0000006,laboratory,4548-4,Hemoglobin A1c/Hemoglobin.total in Blood,7.0,%,numeric
+2023-01-15T09:00:00Z,a1f0c9e2-0001-4b6e-9a51-000000000001,e0000007,laboratory,4548-4,Hemoglobin A1c/Hemoglobin.total in Blood,6.8,%,numeric
+2023-01-15T09:00:00Z,a1f0c9e2-0001-4b6e-9a51-000000000001,e0000007,vital-signs,8480-6,Systolic Blood Pressure,138,mm[Hg],numeric
+2023-06-02T10:30:00Z,a1f0c9e2-0002-4b6e-9a51-000000000002,e0000008,vital-signs,39156-5,Body mass index (BMI) [Ratio],24.1,kg/m2,numeric
+2020-08-20T14:00:00Z,a1f0c9e2-0003-4b6e-9a51-000000000003,e0000009,laboratory,33914-3,Glomerular filtration rate/1.73 sq M.predicted,78,mL/min/{1.73_m2},numeric
