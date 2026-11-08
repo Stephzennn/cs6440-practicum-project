@@ -1,0 +1,17 @@
+[
+  {
+    "name": "Rick Sanchez",
+    "age": 54,
+    "sex": "Male",
+    "dob": "03/14/1972",
+    "mrn": "4827193",
+    "bmi": 31.2,
+    "systolic_bp": 138,
+    "diastolic_bp": 86,
+    "fasting_glucose": 108,
+    "hdl": 42,
+    "triglycerides": 168,
+    "family_history": "Yes",
+    "hba1c": null
+  }
+]
