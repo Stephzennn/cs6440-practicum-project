@@ -1,0 +1,84 @@
+FRAMINGHAM OFFSPRING DIABETES RISK MODELS (2007)
+Source: Wilson PWF et al. Prediction of incident diabetes mellitus in
+middle-aged adults: the Framingham Offspring Study.
+Arch Intern Med. 2007;167(10):1068-1074. doi:10.1001/archinte.167.10.1068
+
+Outcome: incident type 2 diabetes over ~7-8 years (paper uses both terms)
+
+Model type: logistic regression
+
+Values below are odds ratios (OR). Coefficient (beta) = ln(OR).
+
+Intercept is already on the log-odds scale.
+
+Risk = 1 / (1 + exp(-(intercept + sum of beta for each factor present)))
+
+VARIABLE DEFINITIONS
+- Age groups: <50 (reference), 50-64, >=65
+- Male: yes/no (female = reference)
+- Parental history: diabetes in one or both natural parents
+- BMI groups: <25.0 (reference), 25.0-29.9, >=30.0
+- Blood pressure: >=130/85 mmHg or receiving treatment
+  (table header says >130/85; methods section says >=130/85)
+- Low HDL-C: <40 mg/dL in men, <50 mg/dL in women
+- High triglycerides: >=150 mg/dL
+- Large waist: >102 cm in men, >88 cm in women
+- Impaired fasting glucose: 100-126 mg/dL
+- Units: HDL mg/dL x 0.0259 = mmol/L; glucose mg/dL x 0.0555 = mmol/L;
+  triglycerides mg/dL x 0.0113 = mmol/L
+
+
+
+NOTE NOTE NOTE: Values are odds ratios (OR) as published, not regression coefficients.
+Convert each to a beta with the natural log: beta = ln(OR).
+The intercept is already a beta (log-odds scale); use it as-is.
+
+=====================================================================
+TABLE 3 - SIMPLE CLINICAL MODEL, OBESITY BY BMI ONLY
+(basis for the paper's point score; AROC 0.852)
+=====================================================================
+Variable                          OR     95% CI        P
+Age 50-64                         0.98   0.64-1.50     .93
+Age >=65                          0.92   0.54-1.59     .77
+Male                              0.99   0.70-1.41     .95
+Parental history of diabetes      1.76   1.17-2.64     .006
+BMI 25.0-29.9                     1.35   0.78-2.34     .28
+BMI >=30.0                        2.50   1.45-4.30     .001
+Blood pressure elevated/treated   1.65   1.10-2.46     .02
+Low HDL-C                         2.57   1.75-3.77     <.001
+Triglycerides >=150 mg/dL         1.78   1.22-2.59     .003
+Fasting glucose 100-126 mg/dL     7.25   4.89-10.74    <.001
+Intercept                        -5.517
+
+
+=====================================================================
+TABLE 5 - COMPLEX CLINICAL MODELS
+(OR, P value; NI = not included in that model)
+=====================================================================
+Variable                          Model 1        Model 2        Model 3
+Age 50-64                         1.02  .95      0.99  .96      1.03  .88
+Age >=65                          0.83  .53      0.81  .48      0.88  .67
+Male                              1.25  .26      1.12  .55      1.01  .98
+Parental history of diabetes      1.63  .02      1.73  .01      1.71  .01
+BMI 25.0-29.9                     1.08  .80      1.17  .61      1.19  .57
+BMI >=30.0                        1.32  .45      1.80  .10      1.68  .15
+Blood pressure elevated/treated   1.53  .05      1.40  .13      1.58  .03
+Low HDL-C                         2.33  <.001    2.18  <.001    2.18  <.001
+Triglycerides >=150 mg/dL         1.45  .07      1.50  .05      1.57  .03
+Large waist circumference         1.32  .28      1.25  .38      1.27  .35
+Fasting glucose 100-126 mg/dL     5.37  <.001    5.32  <.001    5.09  <.001
+2-hour OGTT 140-200 mg/dL         2.87  <.001    NI             NI
+Fasting insulin >75th pctile      1.23  .33      NI             NI
+C-reactive protein >75th pctile   1.43  .07      NI             NI
+Log Gutt ISI <25th pctile         NI             2.28  <.001    NI
+Log HOMA-IR >75th pctile          NI             NI             2.05  .001
+HOMA beta-cell <25th pctile       NI             NI             1.88  .002
+Intercept                        -5.506         -5.427         -5.620
+AROC                              0.854          0.850          0.851
+
+Notes:
+- Percentile cutoffs (insulin, CRP, Gutt, HOMA) are relative to the
+  Framingham sample; the paper does not give absolute values here.
+- Published ORs are rounded to 2 decimals, so computed risks may differ
+  slightly from the paper's Table 6 point score.
+- Derived in a 99% white, non-Hispanic, middle-aged US sample.
