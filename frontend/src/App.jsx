@@ -1,6 +1,17 @@
 import { useEffect, useState } from 'react'
 import { apiGet } from './api.js'
 
+
+import Header from './components/Header.jsx'
+import PatientBanner from './components/PatientBanner.jsx'
+import InputsPanel from './components/InputsPanel.jsx'
+import CounterfactualPanel from './components/CounterfactualPanel.jsx'
+import RiskResults from './components/RiskResults.jsx'
+import { patient, inputs, models } from './sampleData.js'
+
+
+
+
 export default function App() {
   const [health, setHealth] = useState(null)
   const [error, setError] = useState(false)
@@ -11,13 +22,12 @@ export default function App() {
 
   return (
     <main>
-      <h1>CS 6440 Practicum Project</h1>
-      <p>
-        Backend: {error ? '❌ not reachable' : health ? '✅ connected' : 'checking…'}
-      </p>
-      {health && (
-        <p>Synthea data: {health.synthea_data_found ? '✅ found' : '⚠️ not downloaded yet'}</p>
-      )}
+      
+      <Header />
+      <PatientBanner patient={patient} />
+      <InputsPanel inputs={inputs} />
+      <CounterfactualPanel />
+      <RiskResults models={models} />
     </main>
   )
 }
