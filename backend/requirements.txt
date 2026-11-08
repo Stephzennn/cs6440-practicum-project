@@ -2,7 +2,6 @@ fastapi
 pandas
 uvicorn
 numpy
-pandas
 statsmodels
 scikit-learn
 matplotlib
