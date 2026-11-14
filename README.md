@@ -38,14 +38,14 @@ This uses the dummy patient in `backend/data/sample_patient.json` and prints the
 
 ```
 backend/
-  main.py              FastAPI app (all routes start with /api)
+  main.py              FastAPI app all routes start with /api
   data.py              load_table("patients") for Synthea CSVs
   routers/             API endpoints
-  services/            helper logic
+  services/            helper logic files
   models/              one folder per risk model
 frontend/
-  src/components/      UI components (unstylized for now)
-  src/sampleData.js    dummy values (replace with API calls later)
+  src/components/      UI components 
+  src/sampleData.js    dummy values 
 scripts/
   download_synthea.py  download the Synthea sample data
 ```
@@ -60,7 +60,7 @@ scripts/
 
 Import the repo at [vercel.com/new](https://vercel.com/new). No settings needed.
 
-## References
+## References for models
 
 - Wilson PWF et al. Framingham Offspring Study. *Arch Intern Med.* 2007;167(10):1068-1074.
 - Hippisley-Cox J, Coupland C. QDiabetes-2018. *BMJ.* 2017;359:j5019. (R code © University of Oxford, AGPL-3.0)
