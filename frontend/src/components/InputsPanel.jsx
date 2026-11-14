@@ -12,7 +12,7 @@ export default function InputsPanel({ inputs, form, onChange, onCalculate, statu
           <tr>
             <th>Field</th>
             <th>Loaded value</th>
-            <th>Your input</th>
+            <th>Manual Input</th>
           </tr>
         </thead>
         <tbody>
