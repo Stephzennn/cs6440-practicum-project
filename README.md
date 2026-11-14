@@ -4,6 +4,8 @@ Compare type 2 diabetes risk scores across published models (Framingham, QDiabet
 
 React frontend + FastAPI backend, using [Synthea](https://synthetichealth.github.io/downloads.html) synthetic data. Hosted on Vercel.
 
+**Live app:** https://cs6440-practicum-project-orpin.vercel.app/
+
 ## Run the app
 
 ```powershell

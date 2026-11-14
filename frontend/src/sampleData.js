@@ -1,16 +1,19 @@
 // Hard-coded sample values (replace with apiGet calls later)
 export const patient = { name: 'Rick Sanchez', age: 54, sex: 'Male', dob: '03/14/1972', mrn: '4827193' }
 
+// "value" is the loaded value (stand-in for FHIR). Keys match backend/data/sample_patient.json
 export const inputs = [
-  { label: 'Age', value: '54' },
-  { label: 'Sex', value: 'Male' },
-  { label: 'BMI', value: '31.2' },
-  { label: 'Blood pressure', value: '138/86' },
-  { label: 'Fasting glucose', value: '108 mg/dL' },
-  { label: 'HDL', value: '42 mg/dL' },
-  { label: 'Triglycerides', value: '168 mg/dL' },
-  { label: 'Family history', value: 'Yes' },
-  { label: 'HbA1c', value: null },
+  { key: 'age', label: 'Age', value: '54' },
+  { key: 'sex', label: 'Sex', value: 'Male' },
+  { key: 'bmi', label: 'BMI', value: '31.2' },
+  { key: 'systolic_bp', label: 'Systolic BP (mmHg)', value: '138' },
+  { key: 'diastolic_bp', label: 'Diastolic BP (mmHg)', value: '86' },
+  { key: 'fasting_glucose', label: 'Fasting glucose (mg/dL)', value: '108' },
+  { key: 'hdl', label: 'HDL (mg/dL)', value: '42' },
+  { key: 'triglycerides', label: 'Triglycerides (mg/dL)', value: '168' },
+  { key: 'family_history', label: 'Family history of diabetes', value: 'Yes' },
+  { key: 'hba1c', label: 'HbA1c (%, optional)', value: null },
+  { key: 'waist_cm', label: 'Waist (cm, optional)', value: null },
 ]
 
 export const models = [
