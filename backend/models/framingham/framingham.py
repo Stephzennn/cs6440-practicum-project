@@ -45,7 +45,7 @@ SimpleModelVariables = {
 SimpleModel = pd.DataFrame.from_dict(SimpleModelVariables, orient='index', columns=['Coefficient'])
 SimpleModel
 
-
+"""
 # Dummy patient data (same values as frontend/src/sampleData.js)
 from pathlib import Path
 SAMPLE_PATH = Path(__file__).resolve().parents[2] / "data" / "sample_patient.json"
@@ -77,3 +77,43 @@ logit = coef["Intercept"] + X.values @ coef.drop("Intercept").values
 risk = 1 / (1 + np.exp(-logit))
 print(risk)  # 8-year diabetes risk
 print(f"8-year diabetes risk: {risk[0] * 100:.1f}%")
+"""
+
+
+def framingham_risk(patient):
+    """Return the 8-year diabetes risk (0 to 1) for one patient (dict)."""
+    df = pd.DataFrame([patient])
+
+    # Model inputs (binary features)
+    male = df["sex"] == "Male"
+    X = pd.DataFrame({
+        "age_50_64": df["age"].between(50, 64),
+        "age_65_plus": df["age"] >= 65,
+        "male": male,
+        "parental_history": df["family_history"] == "Yes",
+        "bmi_25_29": (df["bmi"] >= 25) & (df["bmi"] < 30),
+        "bmi_30_plus": df["bmi"] >= 30,
+        "high_bp": (df["systolic_bp"] >= 130) | (df["diastolic_bp"] >= 85),
+        "low_hdl": df["hdl"] < np.where(male, 40, 50),
+        "high_tg": df["triglycerides"] >= 150,
+        "ifg": (df["fasting_glucose"] >= 100) & (df["fasting_glucose"] < 126),
+    }).astype(int)
+
+    features =["age_50_64", "age_65_plus", "male", "parental_history",
+                "bmi_25_29", "bmi_30_plus", "high_bp", "low_hdl", "high_tg", "ifg"]
+
+    coef = SimpleModel["Coefficient"]
+    logit = coef["Intercept"] + X.values @ coef.drop("Intercept").values
+    risk = 1 / (1 + np.exp(-logit))
+    return float(risk[0])  # 8-year diabetes risk
+
+
+if __name__ == "__main__":
+    # Dummy patient data (same values as frontend/src/sampleData.js)
+    from pathlib import Path
+    SAMPLE_PATH = Path(__file__).resolve().parents[2] / "data" / "sample_patient.json"
+    df = pd.read_json(SAMPLE_PATH)
+    print(df)
+
+    risk = framingham_risk(df.iloc[0].to_dict())
+    print(f"8-year diabetes risk: {risk * 100:.1f}%")
