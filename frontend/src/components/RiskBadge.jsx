@@ -1,3 +1,1 @@
-export default function RiskBadge({ level }) {
-  return <span>{level}</span>
-}
+export default function RiskBadge({level}){const key=String(level||'unknown').toLowerCase();return <span className={'risk-badge '+(key.includes('high')||key.includes('increased')?'high':key.includes('moderate')?'moderate':key.includes('low')?'low':'unknown')}>{level||'Not calculated'}</span>}

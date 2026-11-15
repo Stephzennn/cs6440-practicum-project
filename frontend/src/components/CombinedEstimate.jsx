@@ -1,3 +1,1 @@
-export default function CombinedEstimate() {
-  return <p>Combined estimate: Moderate to high risk</p>
-}
+export default function CombinedEstimate(){return <div className="combined"><strong>Interpret models separately</strong><p>These tools use different outcomes, time horizons and populations. A combined risk estimate is not calculated unless a clinically validated aggregation method is available.</p></div>}

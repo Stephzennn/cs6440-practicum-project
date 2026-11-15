@@ -1,8 +1,1 @@
-export default function Header() {
-  return (
-    <header>
-      <h1>Diabetes Risk Assessment</h1>
-      <span>Practitioner view · data from FHIR record</span>
-    </header>
-  )
-}
+export default function Header({connected=false}){return <header className="header"><div><div className="eyebrow">CLINICAL WORKSPACE / PRACTITIONER</div><h1>Diabetes Risk Assessment</h1><p>Review patient indicators, calculate validated models, and examine clinical context.</p></div><span className={connected?'connection online':'connection'}>{connected?'● Backend connected':'○ Backend unavailable'}</span></header>}

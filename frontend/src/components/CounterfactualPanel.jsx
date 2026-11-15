@@ -1,8 +1,1 @@
-export default function CounterfactualPanel() {
-  return (
-    <section>
-      <h2>What would lower this risk?</h2>
-      <button>Create counterfactual</button>
-    </section>
-  )
-}
+import {useState} from 'react';export default function CounterfactualPanel(){const[open,setOpen]=useState(false);return <section className="panel scenario" id="scenario"><div><span className="eyebrow">03 / SCENARIO EXPLORER</span><h2>What could change the risk?</h2><p>Explore hypothetical changes to modifiable risk factors.</p>{open&&<p className="scenario-note">Scenario calculations are not available yet. The backend needs a dedicated validated endpoint; no estimated reduction is displayed.</p>}</div><button className="secondary" onClick={()=>setOpen(v=>!v)}>{open?'Hide details':'Explore scenarios →'}</button></section>}

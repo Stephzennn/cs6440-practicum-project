@@ -1,13 +1,1 @@
-import RiskBadge from './RiskBadge.jsx'
-
-export default function RiskCard({ model }) {
-  return (
-    <div>
-      <h3>{model.name}</h3>
-      <p>{model.value}</p>
-      <p>{model.unit}</p>
-      <RiskBadge level={model.level} />
-      <p>Top drivers: {model.drivers}</p>
-    </div>
-  )
-}
+import RiskBadge from './RiskBadge.jsx';export default function RiskCard({model,calculated}){return <article className="risk-card"><div className="risk-card-top"><span className="model-icon">◈</span><RiskBadge level={calculated?model.level:null}/></div><h3>{model.name}</h3><div className="risk-number">{calculated?(model.value??'—'):'—'}</div><div className="risk-unit">{model.unit||'Risk assessment'}</div><div className="risk-drivers">{calculated?`Top drivers: ${model.drivers||'Not provided'}`:'Run calculation to view backend results'}</div></article>}

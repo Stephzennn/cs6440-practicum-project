@@ -1,7 +1,1 @@
-export default function PatientBanner({ patient }) {
-  return (
-    <section>
-      Patient Name: <strong>{patient.name}</strong> {patient.age} y · {patient.sex} DOB {patient.dob} MRN {patient.mrn}
-    </section>
-  )
-}
+export default function PatientBanner({patient}){return <section className="panel patient"><div className="patient-icon">✚</div><div className="patient-main"><span className="eyebrow">CURRENT PATIENT · SAMPLE RECORD</span><h2>{patient.name}</h2><p>{patient.age} years · {patient.sex} · DOB {patient.dob}</p></div><div className="mrn"><small>MEDICAL RECORD NUMBER</small><strong>{patient.mrn}</strong></div></section>}

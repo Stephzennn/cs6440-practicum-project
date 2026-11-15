@@ -1,17 +1,1 @@
-export default function ModelSelector({ models, selected, onToggle }) {
-  return (
-    <div>
-      {models.map((m) => (
-        <label key={m.id}>
-          <input
-            type="checkbox"
-            checked={selected.includes(m.id)}
-            disabled={Boolean(m.needs)}
-            onChange={() => onToggle(m.id)}
-          />
-          {m.name} {m.needs && `(Needs ${m.needs})`}
-        </label>
-      ))}
-    </div>
-  )
-}
+export default function ModelSelector({models,selected,onToggle}){return <div className="model-options">{models.map(m=><label className={'model-choice '+(selected.includes(m.id)?'checked':'')} key={m.id}><input type="checkbox" checked={selected.includes(m.id)} disabled={Boolean(m.needs)} onChange={()=>onToggle(m.id)}/><span>{m.name}{m.needs&&<small>Requires {m.needs}</small>}</span></label>)}</div>}
